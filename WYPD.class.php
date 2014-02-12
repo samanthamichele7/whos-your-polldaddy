@@ -18,7 +18,7 @@ class WhosYourPolldaddy {
    * The URL for the Polldaddy API.  Probably shouldn't touch this.
    */
 
-	CONST API_URL = "https://api.polldaddy.com/";
+  CONST API_URL = "https://api.polldaddy.com/";
 
   /**
    * The Polldaddy API Key to be used for all requests
@@ -26,7 +26,7 @@ class WhosYourPolldaddy {
    * @var string
    */
 
-	private $_apiKey;
+  private $_apiKey;
 
   /**
    * Default constructor to pull API key from new object
@@ -35,9 +35,9 @@ class WhosYourPolldaddy {
    * @return void
    */
 
-	public function __construct($config) {
-		$this->setApiKey($config);
-	}
+  public function __construct($config) {
+    $this->setApiKey($config);
+  }
 
    /**
    * Set the API key
@@ -145,18 +145,18 @@ class WhosYourPolldaddy {
    * @return int
    */
 
-	public function setUserCode(){
+  public function setUserCode(){
 
     $apiUrl = self::API_URL;
     $pdAccess = self::setPdAccess();
     $options = self::setOptions($type = "access", $request = null );
 
-		$context  = stream_context_create( $options );
-		$result = file_get_contents( $apiUrl, false, $context );
-		$response = json_decode( $result );
+    $context  = stream_context_create( $options );
+    $result = file_get_contents( $apiUrl, false, $context );
+    $response = json_decode( $result );
 
-		return $response->pdResponse->userCode;
-	}
+    return $response->pdResponse->userCode;
+  }
 
   /**
    * Get Latest Polldaddy Poll using GetPolls method
