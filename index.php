@@ -9,9 +9,9 @@
 
 <?php 
 
-  require_once('WYPD.class.php');
+  require_once("WYPD.class.php");
 
-  $WYPD = new WhosYourPolldaddy('YOUR_API_KEY'); ?>
+  $WYPD = new WhosYourPolldaddy("YOUR_API_KEY"); ?>
 
   <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/<?php echo $WYPD->getLatestPoll(); ?>.js"></script>
 

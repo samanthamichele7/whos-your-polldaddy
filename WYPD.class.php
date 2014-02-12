@@ -68,11 +68,11 @@ class WhosYourPolldaddy {
     $apiKey = self::getApiKey();
 
     $pdAccess = array(
-      'pdAccess'     => array(
-          'partnerGUID'      => $apiKey,
-          'demands'          => array(
-            'demand'          => array(
-              'id'              => "GetUserCode"
+      "pdAccess"     => array(
+          "partnerGUID"      => $apiKey,
+          "demands"          => array(
+            "demand"          => array(
+              "id"              => "GetUserCode"
               ))
         )
     );
@@ -95,12 +95,12 @@ class WhosYourPolldaddy {
     $userCode = self::setUserCode();
 
     $pdRequest = array(
-      'pdRequest'     => array(
-          'partnerGUID'      => $apiKey,
-          'userCode'         => $userCode,
-          'demands'          => array(
-            'demand'          => array(
-                'list'          => array(
+      "pdRequest"     => array(
+          "partnerGUID"      => $apiKey,
+          "userCode"         => $userCode,
+          "demands"          => array(
+            "demand"          => array(
+                "list"          => array(
                     "start" => "1",
                     "end"=> "1"
                   ), "id" => $request_method 
@@ -127,10 +127,10 @@ class WhosYourPolldaddy {
     }
 
     $options = array(
-        'http' => array(
-          'method'  => 'POST',
-          'content' => json_encode( $data ),
-          'header'=>  "Content-Type: application/json\r\n" .
+        "http" => array(
+          "method"  => "POST",
+          "content" => json_encode( $data ),
+          "header"=>  "Content-Type: application/json\r\n" .
                       "Accept: application/json\r\n"
           )
      );
